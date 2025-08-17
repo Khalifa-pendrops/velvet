@@ -86,7 +86,7 @@ const Footer = () => {
         </div>
       </div>
       <form onSubmit={handleSubscribe} className=" flex flex-col gap-4 ">
-        {status === "success" && (
+        {/* {status === "success" && (
           <div className="mb-4 p-3 rounded bg-green-500 text-white text-center">
             Velvet newsletter subscription was successfully! 🎉
           </div>
@@ -94,6 +94,20 @@ const Footer = () => {
         {status === "error" && (
           <div className="mb-4 p-3 rounded bg-red-500 text-white text-center">
             Oooops! Something went wrong with your subscription 🥺
+          </div>
+        )} */}
+
+        {status !== "idle" && (
+          <div
+            className={`mb-4 p-2 rounded text-white text-center ${
+              status === "success"
+                ? "bg-green-500"
+                : status === "error"
+                ? "bg-red-500"
+                : ""
+            }`}
+          >
+            {message}
           </div>
         )}
 
@@ -116,7 +130,7 @@ const Footer = () => {
               disabled={status === "loading"}
               className="hover:border hover:bg-[#401a6d] hover:text-white rounded-md px-6 py-2 md:py-0 bg-white w-[4rem] md:w- font-extrabold "
             >
-                <ChevronRight size={16} />
+              <ChevronRight size={16} />
             </button>
           </div>
         </div>

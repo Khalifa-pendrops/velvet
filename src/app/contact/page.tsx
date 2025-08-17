@@ -1,9 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { FaFacebook, FaInstagram, FaDiscord, FaWhatsapp } from "react-icons/fa";
-import { ChevronRight } from "lucide-react";
+import React, { useState } from "react";
+
 
 interface FormData {
   name: string;

@@ -15,7 +15,7 @@ const Clientele = () => {
                 src="/profile.svg"
                 alt="globe icon"
                 width={50}
-                height={50}
+                height={50} 
                 className="w-[50px]"
               />
               <div className="py-2 flex flex-col justify-center gap-1 ">

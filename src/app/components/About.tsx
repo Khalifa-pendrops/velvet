@@ -11,7 +11,7 @@ const About = () => {
     >
       <div className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 ">
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
-          About Velvet
+          About Velvet 
         </h1>
         <p className="w-[90%] text-sm md:text-xl text-[#483959]">
           At Twelvet Educational Development Services, we believe that effective
@@ -54,13 +54,13 @@ const About = () => {
               &times;
             </button>
 
-            <h3 className="text-2xl mb-2 text-[#401a6d] md:text-4xl font-bold relative inline-block after:content-[''] after:block after:w-20 after:h-[2px] after:bg-[#401a6d]  ">
+            <h3 className="text-2xl mb-2 text-[#401a6d] md:text-3xl font-bold relative inline-block after:content-[''] after:block after:w-20 after:h-[2px] after:bg-[#401a6d]  ">
               Solutions
             </h3>
 
             <ul className="list-none list-outside text-gray-700 space-y-3 p-0 m-0 ">
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base ">
                   Leadership Experience:{" "}
                 </span>
                 With over a decade in school administration, Twelvet brings a
@@ -69,9 +69,7 @@ const About = () => {
                 insights and robust support.
               </li>
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
-                  School Set-up:{" "}
-                </span>
+                <span className="font-bold text-base  ">School Set-up: </span>
                 Building a new school is a monumental task, and the process can
                 be overwhelming. From creating engaging classroom environments
                 to setting up efficient administrative offices that support
@@ -84,14 +82,12 @@ const About = () => {
                 what you do best: educating the next generation.
               </li>
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
-                  Supervision:
-                </span>
+                <span className="font-bold text-base mr-1">Supervision:</span>
                 Overseeing administrative operations and providing HR
                 assistance.
               </li>
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   Training Focuses:
                 </span>
                 Enhancing customer service, fostering positive culture,
@@ -101,7 +97,7 @@ const About = () => {
               </li>
 
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   The Path to Automation:
                 </span>
                 Optimizing Operations with Google Workspace Tools, Invoicing
@@ -109,7 +105,7 @@ const About = () => {
               </li>
 
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   Event and Meeting Cordination:
                 </span>
                 Assisting with the planning and execution of school events
@@ -117,7 +113,7 @@ const About = () => {
               </li>
 
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   Communication and Outreach:
                 </span>
                 Assisting with internal and external communication efforts.
@@ -126,7 +122,7 @@ const About = () => {
               </li>
 
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   Brainstorming Sessions:
                 </span>
                 Our brainstorming sessions are designed to unlock the full
@@ -141,7 +137,7 @@ const About = () => {
               </li>
 
               <li className="text-decoration-none ">
-                <span className="font-bold text-base md:text-xl ">
+                <span className="font-bold text-base mr-1">
                   Igbo Language Tutoring and Curriculum Support:
                 </span>
                 We offer comprehensive Igbo language and curriculum support for
@@ -150,9 +146,9 @@ const About = () => {
                 language, culture, and history.
               </li>
             </ul>
-            <h4 className="font-bold mt-4">For Schools</h4>
+            <h4 className="font-bold mt-4 text-base md:text-xl">For Schools</h4>
             <p>
-              <span className="font-bold">Curriculum Development:</span> We
+              <span className="font-bold ">Curriculum Development:</span> We
               partner with schools to create and implement engaging Igbo
               language curricula that align with national and regional
               educational standards. <br />
@@ -164,7 +160,9 @@ const About = () => {
               specialists offer in-class support, workshops, and resources to
               enrich the learning experience for students.
             </p>
-            <h4 className="font-bold mt-4 ">For Individuals</h4>
+            <h4 className="font-bold mt-4 text-base md:text-xl">
+              For Individuals
+            </h4>
             <p>
               <span className="font-bold">Tutoring:</span> We provide one-on-one
               and small group tutoring sessions tailored to meet the unique
