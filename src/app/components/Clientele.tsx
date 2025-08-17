@@ -15,7 +15,7 @@ const Clientele = () => {
                 src="/profile.svg"
                 alt="globe icon"
                 width={50}
-                height={50} 
+                height={50}
                 className="w-[50px]"
               />
               <div className="py-2 flex flex-col justify-center gap-1 ">
@@ -177,7 +177,7 @@ const Clientele = () => {
               />
               <div className="py-2 flex flex-col justify-center gap-1 ">
                 <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] text-start font-bold ">
-                  Ofe'Oma Ventures
+                  Ofe&apos;Oma Ventures
                 </h6>
                 <div className="flex items-center gap-2">
                   <Image

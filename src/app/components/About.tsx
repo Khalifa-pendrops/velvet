@@ -11,18 +11,18 @@ const About = () => {
     >
       <div className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 ">
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
-          About Velvet 
+          About Velvet
         </h1>
         <p className="w-[90%] text-sm md:text-xl text-[#483959]">
           At Twelvet Educational Development Services, we believe that effective
           administration is the bedrock of a thriving school. Since our founding
-          in 2021, we've proudly supported schools and small businesses in
+          in 2021, we&apos;ve proudly supported schools and small businesses in
           managing their administrative complexities, freeing up valuable time
           and resources. Our vision is clear: to support your school with our
           best practice administrative leadership, hands-on supervision, robust
           training programs, responsive HR support and solutions and Igbo
           language tutoring and curriculum support that directly addresses your
-          school's unique needs. <br />
+          school&apos;s unique needs. <br />
           We recognize the dedication required to lead a successful school, and
           our customized solutions are built to make a significant, positive
           impact on your daily operations.
@@ -179,11 +179,11 @@ const About = () => {
               generations. <br />
               Our services are highly adaptable. You can choose to engage us
               termly, utilize our support for one-off needs, or secure our
-              expertise with a full academic year retainership. We'll tailor our
-              approach to integrate effortlessly with your school's current
-              systems, ensuring it's simple and understandable for every member
-              of your team, regardless of their skill and technical proficiency.{" "}
-              <br />
+              expertise with a full academic year retainership. We&apos;ll
+              tailor our approach to integrate effortlessly with your
+              school&apos;s current systems, ensuring it&apos;s simple and
+              understandable for every member of your team, regardless of their
+              skill and technical proficiency. <br />
               Please be assured of our professionalism and that the job will be
               executed excellently. We are happy to answer any questions you may
               have. <br /> <br />
