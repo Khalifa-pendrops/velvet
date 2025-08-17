@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
+import clientPromise from "../../../../lib/mongodb";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     const db = client.db(process.env.MONGODB_DB);
 
     const existing = await db.collection("messages").findOne({ email });
-    
+
     if (existing) {
       return NextResponse.json(
         { error: "Email already exist!" },
