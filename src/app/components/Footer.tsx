@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaDiscord, FaWhatsapp } from "react-icons/fa";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<

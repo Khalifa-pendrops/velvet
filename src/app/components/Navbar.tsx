@@ -36,7 +36,7 @@ const menu = [
           { label: "Cultural Immersion", link: "#about" },
         ],
       },
-      // { label: "Social Media", link: "#footer" },
+      { label: "Social Media", link: "#footer" },
     ],
   },
 
