@@ -6,14 +6,14 @@ const About = () => {
 
   return (
     <section
-      id="#about"
-      className="flex flex-col-reverse md:flex-row-reverse items-center justify-center gap-6 my-[3rem] "
+      id="about"
+      className="flex flex-col-reverse md:flex-row-reverse items-center justify-center gap-6 h-full md:h-screen mt-[6rem]  "
     >
-      <div className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 ">
-        <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
-          About Velvet
+      <div className="items-center md:items-start text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 ">
+        <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#212635]">
+          About Twelvet
         </h1>
-        <p className="w-[90%] text-sm md:text-xl text-[#483959]">
+        <p className="w-[90%] text-sm md:text-base  text-[#65677e] md:text-start ">
           At Twelvet Educational Development Services, we believe that effective
           administration is the bedrock of a thriving school. Since our founding
           in 2021, we&apos;ve proudly supported schools and small businesses in
@@ -27,17 +27,17 @@ const About = () => {
           our customized solutions are built to make a significant, positive
           impact on your daily operations.
         </p>
-        <button
+        {/* <button
           onClick={() => setIsOpen(true)}
           className="bg-[#401a6d] text-white px-4 md:px-6 py-2 rounded-full hover:bg-white hover:text-[#401a6d]  hover:border font-bold  "
         >
           Read More
-        </button>
+        </button> */}
       </div>
-      <div className="w-[100%] md:w-[600px] mx-auto flex items-center justify-center ">
+      <div className="w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center ">
         <Image
-          className="w-full md:w-[90%] "
-          src="/frame1.png"
+          className="w-full md:w-[90%] h-[100%] shadow-2xl rounded-2xl "
+          src="/cleanup.png"
           width={500}
           height={300}
           alt="about image"

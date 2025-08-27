@@ -5,211 +5,85 @@ const Clientele = () => {
   return (
     <section
       id="clientele"
-      className=" flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-6 w-full mx-auto md:px-[4rem] my-[3rem]"
+      className=" flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-6 w-full mx-auto h-full md:h-screen md:px-[4rem] bg-[#ffdcd8] mt-[5rem] md:tp-0 "
     >
-      <div className="items-center text-center  flex flex-col justify-center gap-4 w-full md:w-1/2  ">
-        <div className="flex flex-col items-center gap-4 p-4 w-full">
-          <div className="flex items-center gap-2 flex-col md:flex-row flex-1 w-full ">
-            <div className=" flex flex-col justify-center items-start text-center px-4 py-2 w-full bg-[#112133] rounded-md ">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={50}
-                height={50}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] font-bold text-start">
-                  Rich Learners Academy
-                </h6>
-                <div className="flex items-center gap-1 ">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] ">
-                    Omoku Rivers State
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className=" flex flex-col justify-center items-start text-start px-4 py-2 w-full bg-[#112133] rounded-md ">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1  ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] text-start font-bold ">
-                  Teko School
-                </h6>
-                <div className="flex items-center gap-1 ">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] ">
-                    Port-Harcourt
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className=" flex flex-col justify-center items-start text-start px-4 py-2 w-full bg-[#112133] rounded-md ">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] font-bold">
-                  Golden Citadel School
-                </h6>
-                <div className="flex items-center gap-1">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] ">
-                    Port-Harcourt
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 flex-col md:flex-row flex-1 w-full ">
-            <div className=" flex flex-col justify-center items-start text-center px-4 py-2 w-full bg-[#112133] rounded-md">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] text-start ">
-                  Association for Formidable Educational Development
-                </h6>
-                {/* <div className="flex items-center gap-2">
-                    <Image
-                      src="/globe.svg"
-                      alt="globe icon"
-                      width={20}
-                      height={20}
-                    />
-                    <span className="text-[.8rem] md:text-[12px] text-[#f0f1f2] ">
-                      Omoku Rivers State
-                    </span>
-                  </div> */}
-              </div>
-            </div>
-            <div className=" flex flex-col justify-center items-start text-center px-4 py-2 w-full bg-[#112133] rounded-md ">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] text-start font-bold ">
-                  Irisfield School
-                </h6>
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] ">
-                    Port-Harcourt
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div className=" flex flex-col justify-center items-start text-center px-4 py-2 w-full bg-[#112133] rounded-md ">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] font-bold text-start ">
-                  Francis-Leon Academy
-                </h6>
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] text-start ">
-                    Amawbia Anambra State
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2 flex-col md:flex-row flex-1 w-full ">
-            {/* CHANGE THE WIDTH OF THID DIV WHEN OTHER CLIENTELE IS ADDED */}
-            <div className=" flex flex-col justify-center items-start text-center px-4 py-2 w-full bg-[#112133] rounded-md md:w-[12rem]">
-              <Image
-                src="/profile.svg"
-                alt="globe icon"
-                width={100}
-                height={100}
-                className="w-[50px]"
-              />
-              <div className="py-2 flex flex-col justify-center gap-1 ">
-                <h6 className="text-[9px] md:text-[10px] text-[#f0f1f2] text-start font-bold ">
-                  Ofe&apos;Oma Ventures
-                </h6>
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/globe.svg"
-                    alt="globe icon"
-                    width={15}
-                    height={15}
-                  />
-                  <span className="text-[6px] md:text-[8px] text-[#f0f1f2] ">
-                    Omoku Rivers State
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center ">
+        <Image
+          className="w-full md:w-[90%] h-[100%] shadow-2xl md:rounded-2xl "
+          src="/cleanup.png"
+          width={500}
+          height={300}
+          alt="about image"
+        />
       </div>
-
-      <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4 text-center ">
+      <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center gap-6 text-center ">
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
-          Our Clientele
+          Clientele
         </h1>
-        <p className="w-full px-4 text-sm md:text-base text-[#483959]">
+        <p className="w-full  text-sm md:text-base text-[#483959] md:text-start self-start ">
           We provide high-quality administrative solutions to a diverse range of
           clients, including schools and small businesses. Our clients are often
           successful entrepreneurs or professionals who hold senior positions in
           multinational corporations, or have thriving businesses both
           domestically and internationally. This variety in our clientele means
-          we have experience supporting a wide array of industries. Twelvet
-          helps these clients remain profitable by offering competitive
-          administrative solutions that meet their specific needs.
+          we have experience supporting a wide array of industries.
         </p>
+        <div className="flex flex-col items-center md:items-start justify-center gap-6 w-full px-2 md:px-0">
+          <p className="text-start md:text-base text-[#483959] ">
+            Twelvet helps these clients remain profitable by offering
+            competitive administrative solutions that meet their specific needs.
+          </p>
+          <div className="flex flex-col justify-center items-center gap-4 w-full ">
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Rich Learners Academy, Omoku Rivers State
+              </p>
+            </div>
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Teko School, Port-Harcourt
+              </p>
+            </div>
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Golden Citadel School, Port-Harcourt
+              </p>
+            </div>
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Association for Formidable Educational Development
+              </p>
+            </div>
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Irisfield School, Port-Harcourt
+              </p>
+            </div>
+            <div className="flex items-center justify-cente gap-2  w-full  ">
+              <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
+                {"\u2B50"}
+              </span>
+              <p className="tex-[6px] md:text-base text-[#121e30] ">
+                Francis-Leon Academy, Amawbia Anambra State
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

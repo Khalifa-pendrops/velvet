@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaDiscord, FaWhatsapp } from "react-icons/fa";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
@@ -43,14 +44,22 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className=" w-full bg-[#401a6d] md:h-[20rem] flex flex-col justify-center gap-[3rem] md:px-[7rem] p-4"
+      className=" w-full bg-[#800080] md:h-[40vh] flex flex-col justify-center gap-[3rem] md:px-[7rem] p-4 mt-[5rem] md:mt-0"
     >
       <div className="flex flex-col md:flex-row md:justify-between md:items-center md:gap-0 gap-6">
         <Link href="#" className="flex items-center gap-4 ">
-          <div className="flex justify-center items-center border-none w-[30px] h-[30px] rounded-full bg-amber-600 ">
-            <span className="w-[20px] h-[20px] rounded-full bg-[#401a6d]/80 "></span>
-          </div>
-          <h2 className="text-white ">Twelvet</h2>
+          {/* <div className="flex justify-center items-center border-none w-[40px] h-[40px] rounded-full bg-amber-600">
+            <Image
+              src="/twevlogo.png"
+              alt="hero image"
+              width={500}
+              height={500}
+              className="w-[40px] h-[40px] rounded-full "
+            />
+          </div> */}
+          <h2 className="text-white font-bold">
+            Twelvet Educational Development Services
+          </h2>
         </Link>
         <div className="flex items-center md:justify-center gap-2 ">
           <a
@@ -137,7 +146,7 @@ const Footer = () => {
       </form>
       <p className="text-center text-white ">
         &copy; {new Date().getFullYear()}
-        <span className="text-amber-600 "> Velvet Educational</span> Services.
+        <span className=" "> Velvet Educational </span> Development Services.
         All rights reserved.
       </p>
     </footer>

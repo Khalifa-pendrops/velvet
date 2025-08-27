@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const menu = [
   {
@@ -35,7 +36,7 @@ const menu = [
           { label: "Cultural Immersion", link: "#about" },
         ],
       },
-      { label: "Social Media", link: "#footer" },
+      // { label: "Social Media", link: "#footer" },
     ],
   },
 
@@ -100,8 +101,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-[#401a6d] text-white relativ flex items-center  justify-between px-8 py-4 fixed w-full top-0 shadow-lg z-50 1  ${
-        isScrolled ? "bg-[#401a6d]/50 text-[#401a6d]" : ""
+      className={`bg-[#800080] text-white font-bold relativ flex items-center  justify-between px-8 py-4 fixed w-full top-0 shadow-2xl z-50 1  ${
+        isScrolled ? "bg-[#800080]/60 boder-none text-[#401a6d] shadow-none " : ""
       }`}
     >
       <div className="md:hidden w-[30%] ">
@@ -127,7 +128,7 @@ export default function Navbar() {
         {mobileOpen && (
           <div
             id="mobile-nav"
-            className={`md:hidden text-white px-4 py-4 space-y-2 absolute left-0 top-full w-full bg-[#401a6d]/80 z-50 transform transition-all duration-400 origin-top ${
+            className={`md:hidden text-white px-4 py-4 space-y-2 absolute left-0 top-full w-full bg-[#401a6d]/80 z-50 transform transition-all duration-400 origin-top  ${
               mobileOpen
                 ? "opacity-100 translate-y-0 scale-y-100 pointer-events-auto"
                 : "opacity-0 -translate-y-4 scale-y-95 pointer-events-none"
@@ -221,12 +222,23 @@ export default function Navbar() {
 
       {/* NAV ITEMS */}
       <Link href="/#" className="flex items-center gap-4 ">
-        <div className="flex justify-center items-center border-none w-[30px] h-[30px] rounded-full bg-amber-600 ">
-          <span className="w-[20px] h-[20px] rounded-full bg-[#401a6d]/80 "></span>
+        <div className="flex justify-center items-center border-none w-[60px] h-[60px] rounded-full bg-amber-600">
+          {/* <span className="w-[20px] h-[20px] rounded-full bg-[#401a6d]/80 "></span> */}
+          <Image
+            src="/twevlogo.png"
+            alt="hero image"
+            width={500}
+            height={500}
+            className="w-[60px] h-[60px] rounded-full "
+          />
         </div>
-        <h2 className="bg-gradient-to-r from-pink-200 via-red-500 to-yellow-500 bg-clip-text text-transparent animate-pulse font-bold ">
-          Twelvet{" "}
-          <span className="hidden md:inline-block">Educational Services</span>
+        <h2 className="md:flex flex-col items-start justify-center hidden ">
+          <span className="font-bold text-base md:text-xl ">
+            Twelvet Educational Development Services
+          </span>
+          <span className=" text-sm md:text-[.8rem] font-bold ">
+            Administrative Support for an Effective School
+          </span>
         </h2>
       </Link>
       <div className="hidden md:flex max-w-full px-4 ">
@@ -243,7 +255,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.link}
-                className="flex items-center gap-2 py-4 hover:text-gray-300"
+                className="flex items-center gap-2 py-4 hover:text-[#FF7F50]"
               >
                 {item.label}
                 {item.subMenu && (
