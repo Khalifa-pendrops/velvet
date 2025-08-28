@@ -56,7 +56,7 @@ const Footer = () => {
               className="w-[40px] h-[40px] rounded-full "
             />
           </div> */}
-          <h2 className="text-white font-bold">
+          <h2 className="text-white font-bold md:text-xl">
             Twelvet Educational Development Services
           </h2>
         </Link>
@@ -121,7 +121,7 @@ const Footer = () => {
 
         <div className="flex flex-col gap-4">
           {" "}
-          <p className="text-white text-base md:text-xl ">
+          <p className="text-white text-sm md:text-lg ">
             Subscribe to our newsletter
           </p>
           <div className=" md:w-1/2 flex gap-4 flex-col md:flex-row">
@@ -136,7 +136,7 @@ const Footer = () => {
             <button
               type="submit"
               disabled={status === "loading"}
-              className="hover:border hover:bg-[#401a6d] hover:text-white rounded-md px-6 py-2 md:py-0 bg-white w-[4rem] md:w- font-extrabold "
+              className="w-[5rem] hover:border-none hover:bg-[#fff] rounded-full px-8 py-2 md:py-0 border border-[#FF7F50] font-extrabold text-[#fff] hover:text-[#800080] cursor-pointer "
             >
               <ChevronRight size={16} />
             </button>

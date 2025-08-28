@@ -5,7 +5,19 @@ import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
-const menu = [
+type MenuChild = {
+  label: string;
+  link: string;
+};
+
+type MenuItem = {
+  label: string;
+  link: string;
+  children?: MenuChild[]; 
+  subMenu?: MenuItem[]; 
+};
+
+const menu: MenuItem[] = [
   {
     label: "Home",
     link: "/",
@@ -17,7 +29,7 @@ const menu = [
 
   {
     label: "Services",
-    link: "#about",
+    link: "#services",
     subMenu: [
       {
         label: "For Schools",
@@ -36,7 +48,7 @@ const menu = [
           { label: "Cultural Immersion", link: "#about" },
         ],
       },
-      { label: "Social Media", link: "#footer" },
+      // { label: "Social Media", link: "#footer" },
     ],
   },
 
@@ -46,7 +58,7 @@ const menu = [
   },
   {
     label: "Products",
-    link: "#about",
+    link: "#home",
     subMenu: [
       { label: "Budgeting and other Tracking Templates", link: "#about" },
       { label: "Igbo Language Learning Resources ", link: "#about" },
@@ -59,13 +71,13 @@ const menu = [
 ];
 
 export default function Navbar() {
-  const [openMenu, setOpenMenu] = useState<number | null>(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [openSubMenu, setOpenSubMenu] = useState<{
-    parent: number;
-    child: number;
+    parent: string;
+    child: string;
   } | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileDropdown, setMobileDropdown] = useState<number | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -102,7 +114,9 @@ export default function Navbar() {
   return (
     <nav
       className={`bg-[#800080] text-white font-bold relativ flex items-center  justify-between px-8 py-4 fixed w-full top-0 shadow-2xl z-50 1  ${
-        isScrolled ? "bg-[#800080]/60 boder-none text-[#401a6d] shadow-none " : ""
+        isScrolled
+          ? "bg-[#800080]/60 boder-none text-[#401a6d] shadow-none "
+          : ""
       }`}
     >
       <div className="md:hidden w-[30%] ">
@@ -157,7 +171,7 @@ export default function Navbar() {
                         //this prevent link click
                         e.stopPropagation();
                         setMobileDropdown(
-                          mobileDropdown === index ? null : index
+                          mobileDropdown === item.label ? null : item.label
                         );
                       }}
                       className="p-2"
@@ -165,7 +179,7 @@ export default function Navbar() {
                       <ChevronDown
                         size={16}
                         className={`transition-transform duration-300 ${
-                          mobileDropdown === index ? "rotate-180" : ""
+                          mobileDropdown === item.label ? "rotate-180" : ""
                         }`}
                       />
                     </button>
@@ -173,7 +187,7 @@ export default function Navbar() {
                 </div>
 
                 {/* First-level submenu */}
-                {item.subMenu && mobileDropdown === index && (
+                {item.subMenu && mobileDropdown === item.label && (
                   <div className="pl-4 space-y-1 mt-2">
                     {item.subMenu.map((sub, index2) => (
                       <div key={index2} className="space-y-1">
@@ -183,9 +197,9 @@ export default function Navbar() {
                               {sub.label} <ChevronRight size={14} />
                             </p>
                             <div className="pl-4 space-y-1">
-                              {sub.children.map((child, index3) => (
+                              {sub.children.map((child) => (
                                 <Link
-                                  key={index3}
+                                  key={child.label}
                                   href={child.link}
                                   onClick={() => {
                                     setMobileOpen(false);
@@ -243,11 +257,11 @@ export default function Navbar() {
       </Link>
       <div className="hidden md:flex max-w-full px-4 ">
         <ul className="flex space-x-8">
-          {menu.map((item, index) => (
+          {menu.map((item) => (
             <li
-              key={index}
+              key={item.label}
               className="relative group"
-              onMouseEnter={() => setOpenMenu(index)}
+              onMouseEnter={() => setOpenMenu(item.label)}
               onMouseLeave={() => {
                 setOpenMenu(null);
                 setOpenSubMenu(null);
@@ -262,7 +276,7 @@ export default function Navbar() {
                   <ChevronDown
                     size={16}
                     className={`transition-transform duration-400 ${
-                      openMenu === index ? "rotate-180" : ""
+                      openMenu === item.label ? "rotate-180" : ""
                     }`}
                   />
                 )}
@@ -272,22 +286,25 @@ export default function Navbar() {
                 <ul
                   className={`absolute left-0 top-full bg-white text-gray-800 shadow-lg rounded-md w-48 py-2 transform transition-all duration-400 origin-top z-20
                     ${
-                      openMenu === index
+                      openMenu === item.label
                         ? "opacity-100 scale-y-100 translate-y-0"
                         : "opacity-0 scale-y-95 -translate-y-2 pointer-events-none"
                     }`}
                 >
-                  {item.subMenu.map((sub, index2) => {
+                  {item.subMenu.map((sub) => {
                     const isOpen =
-                      openSubMenu?.parent === index &&
-                      openSubMenu?.child === index2;
+                      openSubMenu?.parent === item.label &&
+                      openSubMenu?.child === sub.label;
 
                     return (
                       <li
-                        key={index2}
+                        key={sub.label}
                         className="relative"
                         onMouseEnter={() =>
-                          setOpenSubMenu({ parent: index, child: index2 })
+                          setOpenSubMenu({
+                            parent: item.label,
+                            child: sub.label,
+                          })
                         }
                         onMouseLeave={() => setOpenSubMenu(null)}
                       >
@@ -308,8 +325,8 @@ export default function Navbar() {
                                   : "opacity-0 -translate-x-2 pointer-events-none"
                               }`}
                           >
-                            {sub.children.map((child, index3) => (
-                              <li key={index3}>
+                            {sub.children.map((child) => (
+                              <li key={child.label}>
                                 <Link
                                   href={child.link}
                                   className="block px-4 py-2 hover:bg-gray-100"

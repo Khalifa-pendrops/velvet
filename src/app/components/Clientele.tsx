@@ -5,7 +5,7 @@ const Clientele = () => {
   return (
     <section
       id="clientele"
-      className=" flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-6 w-full mx-auto h-full md:h-screen md:px-[4rem] bg-[#ffdcd8] mt-[5rem] md:tp-0 "
+      className=" flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-6 w-full mx-auto h-full md:h-screen md:px-[4rem] bg-[#ffdcd8] mt-[5rem] md:mt-0 pt-6 "
     >
       <div className="w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center ">
         <Image
@@ -20,7 +20,7 @@ const Clientele = () => {
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
           Clientele
         </h1>
-        <p className="w-full  text-sm md:text-base text-[#483959] md:text-start self-start ">
+        <p className="w-full  text-sm md:text-base text-[#483959] md:text-start self-start px-2 md:px-0 ">
           We provide high-quality administrative solutions to a diverse range of
           clients, including schools and small businesses. Our clients are often
           successful entrepreneurs or professionals who hold senior positions in
@@ -29,7 +29,7 @@ const Clientele = () => {
           we have experience supporting a wide array of industries.
         </p>
         <div className="flex flex-col items-center md:items-start justify-center gap-6 w-full px-2 md:px-0">
-          <p className="text-start md:text-base text-[#483959] ">
+          <p className="text-start md:text-base text-[#483959] px-2 md:px-0 ">
             Twelvet helps these clients remain profitable by offering
             competitive administrative solutions that meet their specific needs.
           </p>
@@ -38,7 +38,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] ">
                 Rich Learners Academy, Omoku Rivers State
               </p>
             </div>
@@ -46,7 +46,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] ">
                 Teko School, Port-Harcourt
               </p>
             </div>
@@ -54,7 +54,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] ">
                 Golden Citadel School, Port-Harcourt
               </p>
             </div>
@@ -62,7 +62,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] text-start ">
                 Association for Formidable Educational Development
               </p>
             </div>
@@ -70,7 +70,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] ">
                 Irisfield School, Port-Harcourt
               </p>
             </div>
@@ -78,7 +78,7 @@ const Clientele = () => {
               <span className="text-xl text-yellow-400  w-10 h-10 rounded-full flex items-center justify-center bg-[#fff] ">
                 {"\u2B50"}
               </span>
-              <p className="tex-[6px] md:text-base text-[#121e30] ">
+              <p className="text-[14px] md:text-base text-[#121e30] ">
                 Francis-Leon Academy, Amawbia Anambra State
               </p>
             </div>
