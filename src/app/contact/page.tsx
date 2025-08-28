@@ -101,7 +101,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className=" w-full h-screen mx-auto flex flex-col md:flex-row items-center justify-center gap-6 pt-8 px-4 bg-[] "
+      className=" w-full h-screen mx-auto flex flex-col md:flex-row items-center justify-center gap-6 pt-8 px-4 mt-[4rem]"
     >
       <div className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 mt-8">
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
