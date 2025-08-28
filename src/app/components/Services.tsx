@@ -17,14 +17,14 @@ const cards: CardProps[] = [
     title: "Leadership Experience",
     description:
       "With over a  decade in  school administration, Twelvet brings a wealth of practical knowledge regarding the strategic landscape of education. Our administrative perspective offers targeted insights and robust support.",
-    image: "/cleanup.png",
+    image: "/fr1.jpg",
   },
   {
     id: 2,
     title: "School Set-up",
     description:
       "Building a new school is a monumental task, and the process can be overwhelming. From creating engaging classroom environments to setting up efficient administrative offices that support seamless school operations, every detail matters. We specialize in providing comprehensive school setup solutions, handling everything from the initial design to the final touches. Our goal is to create functional, inspiring, and safe learning spaces that empower both students and staff. Let us handle the complexities of setting up your new school so you can focus on what you do best: educating the next generation.",
-    image: "/cleanup.png",
+    image: "/fr2.jpg",
   },
   {
     id: 3,
@@ -38,21 +38,21 @@ const cards: CardProps[] = [
     title: "Training Focuses",
     description:
       "Enhancing customer service, fostering positive culture, strengthening stakeholder engagement, and improving family-school relationships.Building digital presence for schools.Compliance standards, guidelines, and policies.",
-    image: "/cleanup.png",
+    image: "/fr5.jpg",
   },
   {
     id: 5,
     title: "The Path to Automation",
     description:
       "Optimizing Operations with Google Workspace Tools, Invoicing Solutions, and More.",
-    image: "/cleanup.png",
+    image: "/fr6.jpg",
   },
   {
     id: 6,
     title: "Event and Meeting Coordination",
     description:
       "Assisting with the planning and execution of school events (e.g., parent-teacher conferences, assemblies, graduations).",
-    image: "/cleanup.png",
+    image: "/fr7.jpg",
   },
   {
     id: 7,
@@ -66,14 +66,14 @@ const cards: CardProps[] = [
     title: "Brainstorming Sessions",
     description:
       "Our brainstorming sessions are designed to unlock the full potential of your school community. We provide a structured yet dynamic environment where teachers, administrators, and students can collaborate to generate fresh, innovative solutions.Through guided exercises and a focus on open communication, we help teams tackle challenges, develop new programs, and refine existing strategies. The result is a vibrant culture of collaboration that leads to actionable ideas and lasting positive change.",
-    image: "/cleanup.png",
+    image: "/f3.jpg",
   },
   {
     id: 9,
     title: "Igbo language tutoring and curriculum support",
     description:
       "We offer comprehensive Igbo language and curriculum support for both schools and individuals. Our services are designed to help students, educators, and learners of all ages master the Igbo language, culture, and history.",
-    image: "/cleanup.png",
+    image: "/fr4.jpg",
   },
 ];
 
@@ -82,8 +82,6 @@ const Services: React.FC = () => {
   const [needsButton, setNeedsButton] = useState<{ [key: number]: boolean }>(
     {}
   );
-
-  
 
   //use useEffect hook to detect which card needs button
   useEffect(() => {
@@ -119,46 +117,45 @@ const Services: React.FC = () => {
             return (
               <div
                 key={card.id}
-                className="relative bg-white shadow-lg rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer "
+                className="relative bg-white shadow-lg rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer  "
               >
-                <div className="relative w-full h-48 ">
+                <div className="relative w-[100%] h-100 mx-auto ">
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover "
+                    className="object-cover rounded-md "
                     priority
                   />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
+                <div className=" w-full p-2 ">
+                  <h3 className="text-lg font-semibold my-2 ">{card.title}</h3>
 
-                <div
-                  className={`relative overflow-hidden transition-all duration-300 ${
-                    isExpanded ? "max-h-[400px]" : "max-h-[80px]"
-                  }`}
-                >
-                  <p
-                    id={`desc-${card.id}`}
-                    className="text-gray-600 text-sm leading-relaxed"
+                  <div
+                    className={`relative overflow-hidden transition-all duration-300 ${
+                      isExpanded ? "max-h-[400px]" : "max-h-[80px]"
+                    }`}
                   >
-                    {card.description}
-                  </p>
+                    <p
+                      id={`desc-${card.id}`}
+                      className="text-gray-600 text-sm leading-relaxed"
+                    >
+                      {card.description}
+                    </p>
 
-                  
-                  {!isExpanded && showButton && (
-                    <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                    {!isExpanded && showButton && (
+                      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                    )}
+                  </div>
+                  {showButton && (
+                    <button
+                      onClick={() => expansionToggle(card.id)}
+                      className="mt-2 text-gray-500 hover:text-gray-700 text-sm font-medium focus:outline-none cursor-pointer "
+                    >
+                      {isExpanded ? "See Less" : "See More"}
+                    </button>
                   )}
                 </div>
-
-                
-                {showButton && (
-                  <button
-                    onClick={() => expansionToggle(card.id)}
-                    className="mt-2 text-gray-500 hover:text-gray-700 text-sm font-medium focus:outline-none cursor-pointer "
-                  >
-                    {isExpanded ? "See Less" : "See More"}
-                  </button>
-                )}
               </div>
             );
           })}

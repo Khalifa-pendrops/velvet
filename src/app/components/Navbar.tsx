@@ -236,14 +236,14 @@ export default function Navbar() {
 
       {/* NAV ITEMS */}
       <Link href="/#" className="flex items-center gap-4 ">
-        <div className="flex justify-center items-center border-none w-[60px] h-[60px] rounded-full bg-amber-600">
+        <div className="flex justify-center items-center border-none w-[60px] h-[60px] rounded-full ">
           {/* <span className="w-[20px] h-[20px] rounded-full bg-[#401a6d]/80 "></span> */}
           <Image
             src="/twevlogo.png"
             alt="hero image"
             width={500}
             height={500}
-            className="w-[60px] h-[60px] rounded-full "
+            className="w-[40px] md:w-[60px] h-[40px] md:h-[60px] rounded-full "
           />
         </div>
         <h2 className="md:flex flex-col items-start justify-center hidden ">
