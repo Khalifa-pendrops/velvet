@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 interface FormData {
   name: string;
@@ -23,6 +24,22 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
     "idle"
   );
+
+    const animationPropsRight = useScrollAnimation({
+      direction: "right",
+      distance: 150,
+      duration: 1.2,
+      easing: "linear",
+      once: false,
+    });
+  
+      const animationPropsLeft = useScrollAnimation({
+        direction: "left",
+        distance: 150,
+        duration: 1.2,
+        easing: "ease-out",
+        once: false,
+      });
 
   // Validate all fields and return error if need be
   const validateForm = (data: FormData) => {
@@ -102,7 +119,7 @@ const Contact = () => {
       id="contact"
       className="w-full h-full md:h-[100vh] mx-auto flex flex-col items-center justify-center gap-6 mt-[5rem] md:mt-0 "
     >
-      <div className="items-center text-center flex flex-col justify-center gap-6 w-full md:w-1/2">
+      <div {...animationPropsLeft} className="items-center text-center flex flex-col justify-center gap-6 w-full md:w-1/2">
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
           Contact Us
         </h1>
@@ -113,7 +130,7 @@ const Contact = () => {
         </p>
       </div>
 
-      <div className="shadow shadow-gray-600 rounded-lg w-full md:w-[691px] p-4 md:px-6">
+      <div {...animationPropsRight} className="shadow shadow-gray-600 rounded-lg w-full md:w-[691px] p-4 md:px-6">
         {formStatus === "success" && (
           <div className="mb-4 p-3 rounded bg-green-500 text-white text-center">
             Form submitted successfully! 🎉

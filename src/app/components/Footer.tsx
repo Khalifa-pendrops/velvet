@@ -4,12 +4,21 @@ import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaDiscord, FaWhatsapp } from "react-icons/fa";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 const Footer = () => {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
   const [message, setMessage] = useState("");
+
+  const animationProps = useScrollAnimation({
+    direction: "up",
+    distance: 150,
+    duration: 1.2,
+    easing: "linear",
+    once: false,
+  });
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,7 +50,7 @@ const Footer = () => {
     }
   };
   return (
-    <footer
+    <footer {...animationProps}
       id="footer"
       className=" w-full bg-[#800080] md:h-[40vh] flex flex-col justify-center gap-[3rem] md:px-[7rem] p-4 mt-[5rem] md:mt-0"
     >

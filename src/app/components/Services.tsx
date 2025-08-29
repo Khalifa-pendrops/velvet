@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import Image from "next/image";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 interface CardProps {
   id: number;
@@ -83,6 +84,22 @@ const Services: React.FC = () => {
     {}
   );
 
+  const animationProps = useScrollAnimation({
+    direction: "up",
+    distance: 150,
+    duration: 1.2,
+    easing: "linear",
+    once: false,
+  });
+
+  const animationPropsHead = useScrollAnimation({
+    direction: "left",
+    distance: 150,
+    duration: 1.2,
+    easing: "linear",
+    once: false,
+  });
+
   //use useEffect hook to detect which card needs button
   useEffect(() => {
     cards.forEach((card) => {
@@ -105,60 +122,67 @@ const Services: React.FC = () => {
       id="services"
       className="bg-[#dbe8ff] w-full h-full  mt-[6rem] md:mt-0 flex flex-col justify-center items-start gap-4 py-8 "
     >
-      <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#212635] ml-4">
+      <h1
+        {...animationPropsHead}
+        className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#212635] ml-4"
+      >
         Our Services
       </h1>
-      <div className="flex flex-col items-center justify-center gap-2 w-full h-full  mx-auto ">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-          {cards.map((card) => {
-            const isExpanded = showAll[card.id] || false;
-            const showButton = needsButton[card.id] || false;
+      <div {...animationProps}>
+        <div className="flex flex-col items-center justify-center gap-2 w-full h-full  mx-auto ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+            {cards.map((card) => {
+              const isExpanded = showAll[card.id] || false;
+              const showButton = needsButton[card.id] || false;
 
-            return (
-              <div
-                key={card.id}
-                className="relative bg-white shadow-lg rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer  "
-              >
-                <div className="relative w-[100%] h-100 mx-auto ">
-                  <Image
-                    src={card.image}
-                    alt={card.title}
-                    fill
-                    className="object-cover rounded-md "
-                    priority
-                  />
-                </div>
-                <div className=" w-full p-2 ">
-                  <h3 className="text-lg font-semibold my-2 ">{card.title}</h3>
+              return (
+                <div
+                  key={card.id}
+                  className="relative bg-white shadow-lg rounded-xl p-4 transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer  "
+                >
+                  <div className="relative w-[100%] h-100 mx-auto ">
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover rounded-md "
+                      priority
+                    />
+                  </div>
+                  <div className=" w-full p-2 ">
+                    <h3 className="text-lg font-semibold my-2 ">
+                      {card.title}
+                    </h3>
 
-                  <div
-                    className={`relative overflow-hidden transition-all duration-300 ${
-                      isExpanded ? "max-h-[400px]" : "max-h-[80px]"
-                    }`}
-                  >
-                    <p
-                      id={`desc-${card.id}`}
-                      className="text-gray-600 text-sm leading-relaxed"
+                    <div
+                      className={`relative overflow-hidden transition-all duration-300 ${
+                        isExpanded ? "max-h-[400px]" : "max-h-[80px]"
+                      }`}
                     >
-                      {card.description}
-                    </p>
+                      <p
+                        id={`desc-${card.id}`}
+                        className="text-gray-600 text-sm leading-relaxed"
+                      >
+                        {card.description}
+                      </p>
 
-                    {!isExpanded && showButton && (
-                      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                      {!isExpanded && showButton && (
+                        <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+                      )}
+                    </div>
+                    {showButton && (
+                      <button
+                        onClick={() => expansionToggle(card.id)}
+                        className="mt-2 text-gray-500 hover:text-gray-700 text-sm font-medium focus:outline-none cursor-pointer "
+                      >
+                        {isExpanded ? "See Less" : "See More"}
+                      </button>
                     )}
                   </div>
-                  {showButton && (
-                    <button
-                      onClick={() => expansionToggle(card.id)}
-                      className="mt-2 text-gray-500 hover:text-gray-700 text-sm font-medium focus:outline-none cursor-pointer "
-                    >
-                      {isExpanded ? "See Less" : "See More"}
-                    </button>
-                  )}
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

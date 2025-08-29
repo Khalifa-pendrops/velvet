@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 interface FormData {
   name: string;
@@ -24,6 +24,22 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
     "idle"
   );
+
+  const animationPropsRight = useScrollAnimation({
+    direction: "right",
+    distance: 150,
+    duration: 1.2,
+    easing: "linear",
+    once: false,
+  });
+
+  const animationPropsLeft = useScrollAnimation({
+    direction: "left",
+    distance: 150,
+    duration: 1.2,
+    easing: "ease-out",
+    once: false,
+  });
 
   // Validate all fields and return error if need be
   const validateForm = (data: FormData) => {
@@ -103,7 +119,10 @@ const Contact = () => {
       id="contact"
       className=" w-full h-screen mx-auto flex flex-col md:flex-row items-center justify-center gap-6 pt-8 px-4 mt-[4rem]"
     >
-      <div className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 mt-8">
+      <div
+        {...animationPropsRight}
+        className=" items-center text-center  flex flex-col justify-center gap-6 w-full md:w-1/2 mt-8"
+      >
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
           Contact Me
         </h1>
@@ -113,7 +132,10 @@ const Contact = () => {
           detail and present a customized service plan. You can reach us on
         </p>
       </div>
-      <div className=" shadow shadow-gray-600 rounded-lg w-full md:w-[691px] min-h-[auto] flex flex-col gap- items-center md:items-start p-4 md:px-6 justify-center  ">
+      <div
+        {...animationPropsLeft}
+        className=" shadow shadow-gray-600 rounded-lg w-full md:w-[691px] min-h-[auto] flex flex-col gap- items-center md:items-start p-4 md:px-6 justify-center  "
+      >
         {formStatus === "success" && (
           <div className="mb-4 p-3 rounded bg-green-500 text-white text-center">
             Form submitted successfully! 🎉

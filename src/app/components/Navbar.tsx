@@ -113,7 +113,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`bg-[#800080] text-white font-bold relativ flex items-center  justify-between px-8 py-4 fixed w-full top-0 shadow-2xl z-50 1  ${
+      className={`bg-[#800080] text-white font-bold relativ flex items-center  justify-between px-8 py-4 fixed w-full top-0 shadow-2xl z-50  ${
         isScrolled
           ? "bg-[#800080]/60 boder-none text-[#401a6d] shadow-none "
           : ""
@@ -236,14 +236,15 @@ export default function Navbar() {
 
       {/* NAV ITEMS */}
       <Link href="/#" className="flex items-center gap-4 ">
-        <div className="flex justify-center items-center border-none w-[60px] h-[60px] rounded-full ">
+        <div className="flex justify-center items-center border-none w-[60px] h-[60px] rounded-full z-100 ">
           {/* <span className="w-[20px] h-[20px] rounded-full bg-[#401a6d]/80 "></span> */}
           <Image
             src="/twevlogo.png"
             alt="hero image"
             width={500}
             height={500}
-            className="w-[40px] md:w-[60px] h-[40px] md:h-[60px] rounded-full "
+            priority
+            className="w-[40px] md:w-[60px] h-[40px] md:h-[60px] rounded-full z-100"
           />
         </div>
         <h2 className="md:flex flex-col items-start justify-center hidden ">

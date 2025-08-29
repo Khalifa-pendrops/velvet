@@ -1,13 +1,32 @@
 import React from "react";
 import Image from "next/image";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const Clientele = () => {
+  const animationPropsRight = useScrollAnimation({
+    direction: "right",
+    distance: 150,
+    duration: 1.2,
+    easing: "linear",
+    once: false,
+  });
+
+  const animationPropsLeft = useScrollAnimation({
+    direction: "left",
+    distance: 150,
+    duration: 1.2,
+    easing: "ease-out",
+    once: false,
+  });
   return (
     <section
       id="clientele"
       className=" flex flex-col-reverse md:flex-row-reverse items-center justify-center md:justify-between gap-6 w-full mx-auto h-full md:h-screen md:px-[4rem] bg-[#ffdcd8] mt-[5rem] md:mt-0 pt-6 "
     >
-      <div className="w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center ">
+      <div
+        {...animationPropsLeft}
+        className="w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center "
+      >
         <Image
           className="w-full md:w-[90%] h-[100%] shadow-2xl md:rounded-2xl "
           src="/cleanup.png"
@@ -16,7 +35,11 @@ const Clientele = () => {
           alt="about image"
         />
       </div>
-      <div className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center gap-6 text-center ">
+
+      <div
+        {...animationPropsRight}
+        className="w-full md:w-1/2 flex flex-col items-center md:items-start justify-center gap-6 text-center "
+      >
         <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#112133]">
           Clientele
         </h1>

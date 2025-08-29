@@ -1,12 +1,37 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 const HeroSection = () => {
+
+    const animationPropsRight = useScrollAnimation({
+      direction: "right",
+      distance: 150,
+      duration: 1.2,
+      easing: "linear",
+      once: false,
+    });
+  
+      const animationPropsLeft = useScrollAnimation({
+        direction: "left",
+        distance: 150,
+        duration: 1.2,
+        easing: "ease-out",
+        once: false,
+      });
+  
+  
   return (
-    <section id="home" className="relative bg-[#800080] h-full md:h-[90vh] w-full mt-[5rem] md:mt-0">
+    <section
+      id="home"
+      className="relative bg-[#800080] h-full md:h-[90vh] w-full mt-[5rem] md:mt-0"
+    >
       <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-6 w-full h-[100vh] mx-auto   ">
-        <div className=" items-center text-center md:text-start md:items-start  flex flex-col justify-center gap-6 w-full md:w-1/2  py-10 md:ml-[2rem] ">
+        <div
+          {...animationPropsRight}
+          className=" items-center text-center md:text-start md:items-start  flex flex-col justify-center gap-6 w-full md:w-1/2  py-10 md:ml-[2rem] "
+        >
           <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#ffffff]  ">
             Welcome to Twelvet
           </h1>
@@ -23,12 +48,16 @@ const HeroSection = () => {
             </button>
           </Link>
         </div>
-        <div className=" w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center ">
+        <div
+          {...animationPropsLeft}
+          className=" w-[100%] md:w-[600px] h-[60%] mx-auto flex items-center justify-center mt-[5rem] "
+        >
           <Image
             src="/celebrate.png"
             alt="hero image"
             width={500}
             height={300}
+            
             className="w-full md:w-[90%] h-[100%] shadow-2xl rounded-2xl"
           />
         </div>
