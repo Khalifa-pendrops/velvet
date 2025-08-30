@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useScrollAnimation } from "../../../hooks/useScrollAnimation";
 
 interface FormData {
@@ -24,6 +25,8 @@ const Contact = () => {
   const [formStatus, setFormStatus] = useState<"idle" | "success" | "error">(
     "idle"
   );
+
+  const router = useRouter();
 
   const animationPropsRight = useScrollAnimation({
     direction: "right",
@@ -107,6 +110,10 @@ const Contact = () => {
       setFormData({ name: "", email: "", subject: "", message: "" });
 
       setTimeout(() => setFormStatus("idle"), 3000);
+
+      setTimeout(() => {
+        router.push("/");
+      }, 3000);
     } catch (err) {
       console.error("error submitting form:", err);
       setFormStatus("error");
